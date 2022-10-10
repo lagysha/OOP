@@ -1,8 +1,4 @@
-﻿
-using System.Formats.Asn1;
-using System.IO.IsolatedStorage;
-
-namespace OOP
+﻿namespace OOP
 {
     class Program
     {
@@ -26,16 +22,14 @@ namespace OOP
     }
     class GameAccount
     {
-        public readonly string userName;
-        private int currentRating = 1;
-        public int getCurrentRating() { return currentRating; }
-        public string getUserName() { return userName; }
+        public string userName {get;}
+        private int currentRating { get; set; }
         uint gamesCount;
         readonly List<Game> gamesHistory = new List<Game>();
-
         public GameAccount(string userName)
         {
             this.userName = userName;
+            currentRating = 1;
         }
 
         public void winGame(GameAccount opponentName, int rating)
@@ -64,11 +58,11 @@ namespace OOP
             {
                 Console.Write("Winner - ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(game.Winner.getUserName());
+                Console.Write(game.Winner.userName);
                 Console.ResetColor();
                 Console.Write("\tLoser - ");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(game.Looser.getUserName());
+                Console.Write(game.Looser.userName);
                 Console.ResetColor();
                 Console.WriteLine("\tRating - " + game.rating + "\tID - " + game.ID);
             }
