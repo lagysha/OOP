@@ -8,7 +8,7 @@ namespace Lab2
 
     class GameFactory
     {
-        public Game create(GameType gameType,Account gameAccountOne,Account gameAccountTwo,int rating)
+        public Game Create(GameType gameType,Account gameAccountOne,Account gameAccountTwo,uint rating)
         {
             return gameType switch
             {

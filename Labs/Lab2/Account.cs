@@ -3,60 +3,60 @@ namespace Lab2
 {
     class Account
     {
-        public string userName { get; }
-        protected double currentRating { get; set; }
-        readonly List<Game> gamesHistory = new List<Game>();
-        int gamesCount { get { return gamesHistory.Count; } }
-        public double ratingCoeficient { get; set; }
+        public string UserName { get; }
+        protected double CurrentRaiting { get; set; }
+        readonly List<Game> GamesHistory = new List<Game>();
+        int GamesCount { get { return GamesHistory.Count; } }
+        public double RaitingCoeficient { get; set; }
         public Account(string userName)
         {
-            this.userName = userName;
-            currentRating = 1;
-            ratingCoeficient = 1;
+            this.UserName = userName;
+            CurrentRaiting = 1;
+            RaitingCoeficient = 1;
         }
 
-        public void addGame(Game game)
+        public void AddGame(Game game)
         {
             if (game.Looser.Equals(this))
             {
-                looseGame(game);
+                LooseGame(game);
             }
             else
             {
-                winGame(game);
+                WinGame(game);
             }
-            gamesHistory.Add(game);
+            GamesHistory.Add(game);
         }
 
-        public virtual void winGame(Game game)
+        public virtual void WinGame(Game game)
         {
-            currentRating += ratingCoeficient * game.gameRating;
+            CurrentRaiting += RaitingCoeficient * game.GameRaiting;
         }
 
-        public virtual void looseGame(Game game)
+        public virtual void LooseGame(Game game)
         {
-            if (game.gameRating > currentRating) currentRating = 1;
-            else currentRating -= game.gameRating;
+            if (game.GameRaiting > CurrentRaiting) CurrentRaiting = 1;
+            else CurrentRaiting -= game.GameRaiting;
         }
 
 
-            public void getStats()
+            public void GetStats()
         {
-            Console.WriteLine(userName + "`s status" + "\tAccount type - " + this.GetType().Name + "\n");
-            foreach (Game game in gamesHistory)
+            Console.WriteLine(UserName + "`s status" + "\tAccount type - " + this.GetType().Name + "\n");
+            foreach (Game game in GamesHistory)
             {
                 Console.Write("Winner - ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(game.Winner.userName);
+                Console.Write(game.Winner.UserName);
                 Console.ResetColor();
                 Console.Write("\tLoser - ");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(game.Looser.userName);
+                Console.Write(game.Looser.UserName);
                 Console.ResetColor();
-                Console.WriteLine("\tRating - " + game.gameRating + "\tID - " + game.ID + "\tGame type - " + game.GetType().Name);
+                Console.WriteLine("\tRating - " + game.GameRaiting + "\tID - " + game.ID + "\tGame type - " + game.GetType().Name);
             }
-            Console.WriteLine("\nGames played: " + gamesCount);
-            Console.WriteLine("Current rating of " + this.userName + ": " + currentRating + "\n" );
+            Console.WriteLine("\nGames played: " + GamesCount);
+            Console.WriteLine("Current rating of " + this.UserName + ": " + CurrentRaiting + "\n" );
         }
     }
 }

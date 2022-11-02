@@ -5,7 +5,7 @@ namespace Lab2
     {
         public DonaterAccount(string userName) : base(userName)
         {
-            ratingCoeficient = 2;
+            RaitingCoeficient = 2;
         }
 
     }

@@ -5,7 +5,7 @@ namespace Lab2
     {
         public LowPriorityAccount(string userName) : base(userName)
         {
-            ratingCoeficient = 0.5;
+            RaitingCoeficient = 0.5;
         }
     }
 }

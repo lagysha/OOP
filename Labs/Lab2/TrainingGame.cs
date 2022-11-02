@@ -5,8 +5,8 @@ namespace Lab2
     {
         public TrainingGame(Account winner, Account looser) : base(winner, looser)
         {
-            winner.addGame(this);
-            looser.addGame(this);
+            winner.AddGame(this);
+            looser.AddGame(this);
         }
     }
 }
