@@ -14,7 +14,7 @@ namespace Lab2
             {
                 GameType.Raiting => new RaitingGame(gameAccountOne, gameAccountTwo, rating),
                 GameType.DoubleRaiting => new DoubleRaitingGame(gameAccountOne, gameAccountTwo, rating),
-                _ => new TrainingGame(gameAccountOne, gameAccountTwo),
+                _ => new TrainingGame(gameAccountOne, gameAccountTwo)
             };
         }
     }

@@ -1,0 +1,15 @@
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\ProjectShop.exe
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\ProjectShop.deps.json
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\ProjectShop.runtimeconfig.json
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\ProjectShop.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\ProjectShop.pdb
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.csproj.AssemblyReference.cache
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.AssemblyInfoInputs.cache
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.AssemblyInfo.cs
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.csproj.CoreCompileInputs.cache
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\refint\ProjectShop.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.pdb
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.genruntimeconfig.cache
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ref\ProjectShop.dll

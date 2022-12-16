@@ -5,6 +5,7 @@ namespace Lab2
     {
         public TrainingGame(Account winner, Account looser) : base(winner, looser)
         {
+            GameRaiting = 0;
             winner.AddGame(this);
             looser.AddGame(this);
         }
