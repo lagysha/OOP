@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XSystem.Security.Cryptography;
 
 namespace ProjectShop.Services
 {
@@ -26,13 +27,14 @@ namespace ProjectShop.Services
 
         public void Save(User user)
         {
+            user.Password = ComputeHash(user.Password);
             UsersRepository.Save(user);
         }
 
         public User AuthenticateUser(User user)
         {
             User userFromDB = UsersRepository.FindByName(user.UserName);
-            if (userFromDB == null || !userFromDB.Password.Equals(user.Password))
+            if (userFromDB == null || !userFromDB.Password.Equals(ComputeHash(user.Password)))
             {
                 throw new BadCredentialsException("Bad Credentials");
             }
@@ -63,6 +65,24 @@ namespace ProjectShop.Services
             user.Balance = user.Balance - retrievedProduct.Price;
             user.PurchaseHistory.Add(retrievedProduct);
             ProductsRespository.Delete(retrievedProduct);
+        }
+
+        private string ComputeHash(String password)
+        {
+            byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+
+            return ByteArrayToString(tmpHash);
+        }
+
+        private string ByteArrayToString(byte[] arrInput)
+        {
+            StringBuilder sOutput = new StringBuilder(arrInput.Length);
+            for (int i = 0; i < arrInput.Length - 1; i++)
+            {
+                sOutput.Append(arrInput[i].ToString("X2"));
+            }
+            return sOutput.ToString();
         }
     }
 }

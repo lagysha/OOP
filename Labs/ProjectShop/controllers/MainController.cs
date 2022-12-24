@@ -16,11 +16,15 @@ namespace ProjectShop.controllers
         ProductsController ProductsController { get; set; }
         Dictionary<string, Delegate> Actions { get; set; }
         List<String> NameOfActions { get; set; }
+        DBContext DBContext { get; set; }
+        Serializer Serializer { get; set; }
+        private readonly string FileName = "C:\\Users\\nikit\\source\\repos\\OOP\\Labs\\ProjectShop\\Data\\DBContext.json";
         public MainController()
         {
-            DBContext dBContext = new DBContext();
-            UsersController = new UsersController(dBContext);
-            ProductsController = new ProductsController(dBContext);
+            Serializer = new Serializer();
+            DBContext = Serializer.DeserializeData(FileName);
+            UsersController = new UsersController(DBContext);
+            ProductsController = new ProductsController(DBContext);
             Actions = new Dictionary<string, Delegate>();
             NameOfActions = new List<String>();
             NameOfActions.Add("show products");
@@ -37,6 +41,8 @@ namespace ProjectShop.controllers
         {
             RegistryAndLogin();
             ShowActions();
+            Serializer.SerializeData(FileName, DBContext);
+            Environment.Exit(0);
         }
 
         private void ShowActions()
@@ -49,7 +55,12 @@ namespace ProjectShop.controllers
                 int number = 1;
                 NameOfActions.ForEach(e => Console.Write((number++)+" "+ e+"\n"));
                 Console.WriteLine("\nChoose action by number:");
+                Console.WriteLine("Type exit to close program");
                 string choice = Console.ReadLine();
+                if (choice.Equals("exit"))
+                {
+                    break;
+                }
                 if (!Actions.ContainsKey(choice))
                 {
                     Console.WriteLine("Invalid operation");

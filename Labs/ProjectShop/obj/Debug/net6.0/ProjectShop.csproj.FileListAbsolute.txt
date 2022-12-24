@@ -13,3 +13,6 @@ C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\refint\Project
 C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.pdb
 C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.genruntimeconfig.cache
 C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ref\ProjectShop.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\bin\Debug\net6.0\XAct.Core.PCL.dll
+C:\Users\nikit\source\repos\OOP\Labs\ProjectShop\obj\Debug\net6.0\ProjectShop.csproj.CopyComplete
