@@ -34,14 +34,14 @@ namespace ProjectShop.controllers
             try
             {
                 UsersValidator.Validate(user);
+                UsersService.Save(user);
+                Console.WriteLine("Registration is Succeful!");
             }
             catch (UserAlreadyExistsException e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Try again");
             }
-            UsersService.Save(user);
-            Console.WriteLine("Registration is Succeful!");
         }
 
         public void Login()
